@@ -5,6 +5,7 @@
     color: gray;
     padding: 10px;
     cursor: pointer;
+    width: 120px;
 }
 
 .inputOption:hover {

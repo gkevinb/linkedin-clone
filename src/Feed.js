@@ -42,6 +42,7 @@ function Feed() {
             description: user.email,
             message: input,
             photoUrl: user.photoUrl || "",
+            likes: 0,
             timestamp: firebase.firestore.FieldValue.serverTimestamp(),
         });
 
@@ -91,14 +92,16 @@ function Feed() {
                 {posts.map(
                     ({
                         id,
-                        data: { name, description, message, photoUrl },
+                        data: { name, description, message, photoUrl, likes },
                     }) => (
                         <Post
                             key={id}
+                            id={id}
                             name={name}
                             description={description}
                             message={message}
                             photoUrl={photoUrl}
+                            likes={likes}
                         />
                     )
                 )}

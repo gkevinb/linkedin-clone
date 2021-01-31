@@ -8,7 +8,7 @@ import './Post.css'
 import InputOption from './InputOption'
 
 
-const Post = forwardRef(({ name, description, message, photoUrl}, ref) => {
+const Post = forwardRef(({ id, name, description, message, photoUrl, likes}, ref) => {
     return (
         <div ref={ref} className="post">
             <div className="post__header">
@@ -23,7 +23,7 @@ const Post = forwardRef(({ name, description, message, photoUrl}, ref) => {
             </div>
 
             <div className="post__buttons">
-                <InputOption Icon={ThumbUpAltOutlinedIcon} title="Like" color="gray" />
+                <InputOption Icon={ThumbUpAltOutlinedIcon} title="Like" color="gray" id={id} likes={likes}/>
                 <InputOption Icon={ChatOutlinedIcon} title="Comment" color="gray" />
                 <InputOption Icon={ShareOutlinedIcon} title="Share" color="gray" />
                 <InputOption Icon={SendOutlinedIcon} title="Send" color="gray" />
